@@ -4,6 +4,271 @@
 
 {% block body %}
 
+<!-- tmp banner area start -->
+<div class="tmp-banner-one-area model-style-banner with-instructor style-2" id="home" data-black-overlay="5">
+    <div class="container">
+        {% for i in banner %}
+        <div class="banner-one-main-wrapper">
+            {% csrf_token %}
+            <div class="row align-items-center">
+                <div class="col-lg-12 ">
+                    <div class="inner banner-model-15">
+                        <h1 class="title tmp-fade-in">
+                            {{ i.title|safe }}
+                        </h1>
+                        <p class="disc tmp-fade-in">
+                            {{ i.description|safe }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="social-area-wrapper-varticle">
+        <ul>
+            <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-tiktok"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+        </ul>
+    </div>
+    <div class="hero-bg-video">
+        <video autoplay="" muted="" loop="" id="myVideo">
+            <source src="{% static 'assets/images/video/fitness.mp4' %}" type="video/mp4">
+        </video>
+    </div>
+</div>
+<!-- tmp banner area end -->
 
+<!-- tmp text para start -->
+<div class="about-content-area">
+    {% for i in text %}
+    <div class="container tmp-section-gapTop">
+        <div class="text-para-doc-wrap">
+            <h2 class="text-para-documents tmp-scroll-trigger tmp-fade-in tmp-title-split-2 animation-order-1">
+                {{ i.text|safe }}
+            </h2>
+            <div class="right-bg-text-para">
+                <img src="{{ i.image.url }}" alt="">
+            </div>
+            <div class="left-bg-text-para">
+                <img src="{{ i.sec_image.url }}" alt="">
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<!-- tmp text para end -->
 
+<!-- tmp About Me Start -->
+<section class="about-us-area tmp-section-gapTop" id="about">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="about-us-left-content-wrap bg-vactor-one">
+                    {% for i in main_about %}
+                    <div class="years-of-experience-card tmp-scroll-trigger tmp-fade-in animation-order-1">
+                        <h2 class="counter card-title"><span class="odometer" data-count="10">00</span>+
+                        </h2>
+                        <p class="card-para">{{ i.text|safe }}</p>
+                    </div>
+                    {% endfor %}
+                    <div class="design-card tmp-scroll-trigger tmp-fade-in animation-order-2">
+                        {% for i in me_about %}
+                        <div class="design-card-img">
+                            <div class="icon"><i class="fa-sharp fa-thin fa-lock"></i></div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">{{ i.title|safe }}</h3>
+                            <p class="card-para">{{ i.description|safe }}</p>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="about-us-right-content-wrap">
+                    <div class="section-head text-align-left mb--50">
+                        {% for i in about %}
+                        <div class="section-sub-title tmp-scroll-trigger tmp-fade-in animation-order-1">
+                            <span class="subtitle">{{ i.tagline|safe }}</span>
+                        </div>
+                        <h2 class="title split-collab tmp-scroll-trigger tmp-fade-in animation-order-2">{{ i.title|safe }}</h2>
+                        <p class="description tmp-scroll-trigger tmp-fade-in animation-order-3">{{ i.description|safe }}
+                        </p>
+                        {% endfor %}
+                    </div>
+                    <div class="about-us-section-card row g-5">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                            {% for i in min_about %}
+                            <div class="about-us-card tmponhover tmp-scroll-trigger tmp-fade-in animation-order-4">
+                                <div class="card-head">
+                                    <div class="logo-img">
+                                        <img src="{% static 'assets/images/about/logo-1.svg' %}" alt="logo">
+                                    </div>
+                                    <h3 class="card-title">{{ i.title|safe }}</h3>
+                                </div>
+                                <p class="card-para">{{ i.description|safe }}
+                                </p>
+                            </div>
+                            {% endfor %}
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                            {% for i in max_about %}
+                            <div class="about-us-card tmponhover tmp-scroll-trigger tmp-fade-in animation-order-5">
+                                <div class="card-head">
+                                    <div class="logo-img">
+                                        <img src="{% static 'assets/images/about/logo-2.svg' %}" alt="logo">
+                                    </div>
+                                    <h3 class="card-title">{{ i.title|safe }}</h3>
+                                </div>
+                                <p class="card-para">{{ i.description|safe }}
+                                </p>
+                            </div>
+                            {% endfor %}
+                        </div>
+
+                    </div>
+                    <div class="about-btn mt--40 tmp-scroll-trigger tmp-fade-in animation-order-6">
+                        {% for i in end_about %}
+                        <a class="tmp-btn hover-icon-reverse radius-round" href="{{ i.thm_btn }}">
+                            <span class="icon-reverse-wrapper">
+                                <span class="btn-text">{{ i.thm_text|safe }}</span>
+                                <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                                <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                            </span>
+                        </a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- tmp About Me end -->
+
+<!-- section-title-for-header -->
+<div class="section-title-brand-area  tmp-section-gapTop">
+    <div class="container">
+        <div class="row">
+            {% for i in section_header %}
+            <div class="col-lg-12">
+                <div class="section-head mb--50">
+                    <div class="section-sub-title center-title tmp-scroll-trigger tmp-fade-in animation-order-1">
+                        <span class="subtitle">{{ i.tagline|safe }}</span>
+                    </div>
+                    <h2 class="title split-collab tmp-scroll-trigger tmp-fade-in animation-order-2">{{ i.title|safe }}
+                    </h2>
+                    <p class="description section-sm tmp-scroll-trigger tmp-fade-in animation-order-3">{{ i.description|safe }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<!-- section-title-for-header end -->
+
+<div class="our-supported-company-area">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6">
+                <div class="support-company-logo tmp-scroll-trigger tmp-fade-in animation-order-1">
+                    <img src="{% static 'assets/images/our-supported-company/company-logo-1.svg' %}"
+                        alt="Reeni - Personal Portfolio HTML Template">
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6">
+                <div class="support-company-logo tmp-scroll-trigger tmp-fade-in animation-order-2">
+                    <img src="{% static 'assets/images/our-supported-company/company-logo-2.svg' %}"
+                        alt="Reeni - Personal Portfolio HTML Template">
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6">
+                <div class="support-company-logo tmp-scroll-trigger tmp-fade-in animation-order-3">
+                    <img src="{% static 'assets/images/our-supported-company/company-logo-3.svg' %}"
+                        alt="Reeni - Personal Portfolio HTML Template">
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6">
+                <div class="support-company-logo tmp-scroll-trigger tmp-fade-in animation-order-4">
+                    <img src="{% static 'assets/images/our-supported-company/company-logo-4.svg' %}"
+                        alt="Reeni - Personal Portfolio HTML Template">
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6">
+                <div class="support-company-logo tmp-scroll-trigger tmp-fade-in animation-order-5">
+                    <img src="{% static 'assets/images/our-supported-company/company-logo-5.svg' %}"
+                        alt="Reeni - Personal Portfolio HTML Template">
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6">
+                <div class="support-company-logo tmp-scroll-trigger tmp-fade-in animation-order-6">
+                    <img src="{% static 'assets/images/our-supported-company/company-logo-6.svg' %}"
+                        alt="Reeni - Personal Portfolio HTML Template">
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6">
+                <div class="support-company-logo tmp-scroll-trigger tmp-fade-in animation-order-7">
+                    <img src="{% static 'assets/images/our-supported-company/company-logo-7.svg' %}"
+                        alt="Reeni - Personal Portfolio HTML Template">
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6">
+                <div class="support-company-logo tmp-scroll-trigger tmp-fade-in animation-order-8">
+                    <img src="{% static 'assets/images/our-supported-company/company-logo-8.svg' %}"
+                        alt="Reeni - Personal Portfolio HTML Template">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Tpm Latest Service Area Start -->
+    <section class="latest-service-area tmp-section-gapTop" id="service">
+        <div class="container">
+            <div class="section-head mb--50">
+                {% for i in services %}
+                <div class="section-sub-title center-title tmp-scroll-trigger tmp-fade-in animation-order-1">
+                    <span class="subtitle">{{ i.tagline|safe }}</span>
+                </div>
+                <h2 class="title split-collab tmp-scroll-trigger tmp-fade-in animation-order-2">{{ i.title|safe }}
+                </h2>
+                <p class="description section-sm tmp-scroll-trigger tmp-fade-in animation-order-3">{{ i.description|safe }}</p>
+                {% endfor %}
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    {% for i in service_one %}
+                    <div class="service-card-v2 tmponhover tmp-scroll-trigger tmp-fade-in animation-order-1">
+                        <h2 class="service-card-num">{{ i.title|safe }}</h2>
+                        <p class="service-para">{{ i.description|safe }}</p>
+                    </div>
+                    {% endfor %}
+                    {% for i in service_two %}
+                    <div class="service-card-v2 tmponhover tmp-scroll-trigger tmp-fade-in animation-order-2">
+                        <h2 class="service-card-num">{{ i.title|safe }}</h2>
+                        <p class="service-para">{{ i.description|safe }}</p>
+                    </div>
+                    {% endfor %}
+                    {% for i in service_three %}
+                    <div class="service-card-v2 tmponhover tmp-scroll-trigger tmp-fade-in animation-order-3">
+                        <h2 class="service-card-num">{{ i.title|safe }}</h2>
+                        <p class="service-para">{{ i.description|safe }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="col-lg-6">
+                    {% for i in service_end %}
+                    <div class="service-card-user-image">
+                        <img class="tmp-scroll-trigger tmp-zoom-in animation-order-1" src="{{ i.image.url }}" alt="latest-user-image">
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Tpm Latest Service Area End -->
 {% endblock %}

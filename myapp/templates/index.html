@@ -226,49 +226,377 @@
     </div>
 </div>
 
-    <!-- Tpm Latest Service Area Start -->
-    <section class="latest-service-area tmp-section-gapTop" id="service">
-        <div class="container">
-            <div class="section-head mb--50">
-                {% for i in services %}
-                <div class="section-sub-title center-title tmp-scroll-trigger tmp-fade-in animation-order-1">
-                    <span class="subtitle">{{ i.tagline|safe }}</span>
+<!-- Tpm Latest Service Area Start -->
+<section class="latest-service-area tmp-section-gapTop" id="service">
+    <div class="container">
+        <div class="section-head mb--50">
+            {% for i in services %}
+            <div class="section-sub-title center-title tmp-scroll-trigger tmp-fade-in animation-order-1">
+                <span class="subtitle">{{ i.tagline|safe }}</span>
+            </div>
+            <h2 class="title split-collab tmp-scroll-trigger tmp-fade-in animation-order-2">{{ i.title|safe }}
+            </h2>
+            <p class="description section-sm tmp-scroll-trigger tmp-fade-in animation-order-3">{{ i.description|safe }}
+            </p>
+            {% endfor %}
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                {% for i in service_one %}
+                <div class="service-card-v2 tmponhover tmp-scroll-trigger tmp-fade-in animation-order-1">
+                    <h2 class="service-card-num">{{ i.title|safe }}</h2>
+                    <p class="service-para">{{ i.description|safe }}</p>
                 </div>
-                <h2 class="title split-collab tmp-scroll-trigger tmp-fade-in animation-order-2">{{ i.title|safe }}
-                </h2>
-                <p class="description section-sm tmp-scroll-trigger tmp-fade-in animation-order-3">{{ i.description|safe }}</p>
+                {% endfor %}
+                {% for i in service_two %}
+                <div class="service-card-v2 tmponhover tmp-scroll-trigger tmp-fade-in animation-order-2">
+                    <h2 class="service-card-num">{{ i.title|safe }}</h2>
+                    <p class="service-para">{{ i.description|safe }}</p>
+                </div>
+                {% endfor %}
+                {% for i in service_three %}
+                <div class="service-card-v2 tmponhover tmp-scroll-trigger tmp-fade-in animation-order-3">
+                    <h2 class="service-card-num">{{ i.title|safe }}</h2>
+                    <p class="service-para">{{ i.description|safe }}</p>
+                </div>
                 {% endfor %}
             </div>
+            <div class="col-lg-6">
+                {% for i in service_end %}
+                <div class="service-card-user-image">
+                    <img class="tmp-scroll-trigger tmp-zoom-in animation-order-1" src="{{ i.image.url }}"
+                        alt="latest-user-image">
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Tpm Latest Service Area End -->
+
+<!-- Tpm Latest Portfolio Start -->
+<section class="tmp-latest-portfolio tmp-section-gapTop">
+    <div class="container">
+        <div class="header-top-inner">
+            {% for i in portfolio %}
+            <div class="section-head text-align-left">
+                <div class="section-sub-title tmp-scroll-trigger tmp-fade-in animation-order-1">
+                    <span class="subtitle">{{ i.tagline|safe }}</span>
+                </div>
+                <h2 class="title split-collab tmp-scroll-trigger tmp-fade-in animation-order-2">{{ i.title|safe }}</h2>
+            </div>
+            <div class="discription-area tmp-scroll-trigger tmp-fade-in animation-order-3">
+                <p class="description">{{ i.description|safe }}
+                </p>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="row g-5">
+            <div class="col-lg-6 col-md-6 col-12">
+                <div
+                    class="latest-portfolio-card-style-two tmponhover tmp-scroll-trigger tmp-fade-in animation-order-1">
+                    <div class="portfoli-card-img">
+                        {% for i in card %}
+                        <div class="img-box v2">
+                            <a href="project-details.html">
+                                <img class="img-primary hidden-on-mobile" src="{{ i.pri_image.url }}"
+                                    alt="Blog Thumbnail">
+                                <img class="img-secondary" src="{{ i.sec_image.url }}" alt="BLog Thumbnail">
+                            </a>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="portfolio-card-content-wrap">
+                        {% for i in content %}
+                        <div class="content-left">
+                            <h3 class="portfolio-card-title"><a href="project-details.html">{{ i.title|safe }}</a>
+                            </h3>
+                            <div class="tag-items">
+                                <ul>
+                                    <li>
+                                        <a href="#" class="tag-item">{{ i.thm_pri_text|safe }}</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="tag-item">{{ i.thm_sec_text|safe }}</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="tmp-button-here">
+                            <a class="tmp-btn hover-icon-reverse radius-round btn-border btn-md" href="{{ i.thm_btn }}">
+                                <span class="icon-reverse-wrapper">
+                                    <span class="btn-text">{{ i.thm_text|safe }}</span>
+                                    <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                                    <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                                </span>
+                            </a>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-12">
+                <div
+                    class="latest-portfolio-card-style-two tmponhover tmp-scroll-trigger tmp-fade-in animation-order-2">
+                    <div class="portfoli-card-img">
+                        {% for i in second_card %}
+                        <div class="img-box v2">
+                            <a href="project-details.html">
+                                <img class="img-primary hidden-on-mobile" src="{{ i.pri_image.url }}"
+                                    alt="Blog Thumbnail">
+                                <img class="img-secondary" src="{{ i.sec_image.url }}" alt="BLog Thumbnail">
+                            </a>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="portfolio-card-content-wrap">
+                        {% for i in second_content %}
+                        <div class="content-left">
+                            <h3 class="portfolio-card-title"><a href="project-details.html">{{ i.title|safe }}</a>
+                            </h3>
+                            <div class="tag-items">
+                                <ul>
+                                    <li>
+                                        <a href="#" class="tag-item">{{ i.thm_pri_text|safe }}</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="tag-item">{{ i.thm_sec_text|safe }}</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="tag-item">{{ i.thm_third_text|safe }}</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="tmp-button-here">
+                            <a class="tmp-btn hover-icon-reverse radius-round btn-border btn-md" href="{{ i.thm_btn }}">
+                                <span class="icon-reverse-wrapper">
+                                    <span class="btn-text">{{ i.thm_text|safe }}</span>
+                                    <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                                    <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                                </span>
+                            </a>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-12">
+                <div
+                    class="latest-portfolio-card-style-two tmponhover tmp-scroll-trigger tmp-fade-in animation-order-3">
+                    <div class="portfoli-card-img">
+                        {% for i in third_card %}
+                        <div class="img-box v2">
+                            <a href="project-details.html">
+                                <img class="img-primary hidden-on-mobile" src="{{ i.pri_image.url }}"
+                                    alt="Blog Thumbnail">
+                                <img class="img-secondary" src="{{ i.sec_image.url }}" alt="BLog Thumbnail">
+                            </a>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="portfolio-card-content-wrap">
+                        {% for i in third_content %}
+                        <div class="content-left">
+                            <h3 class="portfolio-card-title"><a href="project-details.html">{{ i.title|safe }}</a>
+                            </h3>
+                            <div class="tag-items">
+                                <ul>
+                                    <li>
+                                        <a href="#" class="tag-item">{{ i.thm_pri_text|safe }}</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="tag-item">{{ i.thm_sec_text|safe }}</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="tag-item">{{ i.thm_third_text|safe }}</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="tmp-button-here">
+                            <a class="tmp-btn hover-icon-reverse radius-round btn-border btn-md" href="{{ i.thm_btn }}">
+                                <span class="icon-reverse-wrapper">
+                                    <span class="btn-text">{{ i.thm_text|safe }}</span>
+                                    <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                                    <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                                </span>
+                            </a>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-12">
+                <div
+                    class="latest-portfolio-card-style-two tmponhover tmp-scroll-trigger tmp-fade-in animation-order-4">
+                    <div class="portfoli-card-img">
+                        {% for i in fourth_card %}
+                        <div class="img-box v2">
+                            <a href="project-details.html">
+                                <img class="img-primary hidden-on-mobile" src="{{ i.pri_image.url }}"
+                                    alt="Blog Thumbnail">
+                                <img class="img-secondary col-md-6" src="{{ i.sec_image.url }}" alt="BLog Thumbnail">
+                            </a>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="portfolio-card-content-wrap">
+                        {% for i in fourth_card %}
+                        <div class="content-left">
+                            <h3 class="portfolio-card-title"><a href="project-details.html">{{ i.title|safe }}</a>
+                            </h3>
+                            <div class="tag-items">
+                                <ul>
+                                    <li>
+                                        <a href="#" class="tag-item">{{ i.thm_pri_text|safe }}</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="tag-item">{{ i.thm_sec_text|safe }}</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="tmp-button-here">
+                            <a class="tmp-btn hover-icon-reverse radius-round btn-border btn-md" href="{{ i.thm_btn }}">
+                                <span class="icon-reverse-wrapper">
+                                    <span class="btn-text">{{ i.thm_text|safe }}</span>
+                                    <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                                    <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                                </span>
+                            </a>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="see-all-btn-wrap text-center mt--60">
+            {% for i in portfolio_end %}
+            <a class="tmp-btn hover-icon-reverse radius-round" href="{{ i.thm_btn }}">
+                <span class="icon-reverse-wrapper">
+                    <span class="btn-text">{{ i.thm_text|safe }}</span>
+                    <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                    <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                </span>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<!-- Tpm Latest Portfolio End -->
+
+<!-- Tpm Education Experience Area Start -->
+<section class="education-experience tmp-section-gapTop" id="resume">
+    <div class="container">
+        {% for i in experience %}
+        <div class="section-head mb--50">
+            <div class="section-sub-title center-title tmp-scroll-trigger tmp-fade-in animation-order-1">
+                <span class="subtitle">{{ i.tagline|safe }}</span>
+            </div>
+            <h2 class="title split-collab tmp-scroll-trigger tmp-fade-in animation-order-2">
+                {{ i.title|safe }}
+            </h2>
+            <p class="description section-sm tmp-scroll-trigger tmp-fade-in animation-order-3">
+                {{ i.description|safe }}
+            </p>
+        </div>
+        {% endfor %}
+        {% for i in education %}
+        <h2 class="custom-title mb-32 tmp-scroll-trigger tmp-fade-in animation-order-1">
+            {{ i.title|safe }}
+            <span><img src="{{ i.image.url }}" alt="custom-line" /></span>
+        </h2>
+        {% endfor %}
+        <div class="row g-5">
+            <div class="col-lg-6 col-sm-6">
+                {% for i in trainer %}
+                <div class="education-experience-card tmponhover tmp-scroll-trigger tmp-fade-in animation-order-1">
+                    <h4 class="edu-sub-title">{{ i.title|safe }}</h4>
+                    <h2 class="edu-title">{{ i.min_title|safe }}</h2>
+                    <p class="edu-para">
+                    {{ i.description|safe }}
+                    </p>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="col-lg-6 col-sm-6">
+                {% for i in assistant %}
+                <div class="education-experience-card tmponhover tmp-scroll-trigger tmp-fade-in animation-order-2">
+                    <h4 class="edu-sub-title">{{ i.title|safe }}</h4>
+                    <h2 class="edu-title">{{ i.min_title|safe }}</h2>
+                    <p class="edu-para">
+                    {{ i.description|safe }}
+                    </p>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="col-lg-6 col-sm-6">
+                {% for i in design %}
+                <div class="education-experience-card tmponhover tmp-scroll-trigger tmp-fade-in animation-order-3">
+                    <h4 class="edu-sub-title">{{ i.title|safe }}</h4>
+                    <h2 class="edu-title">{{ i.min_title|safe }}</h2>
+                    <p class="edu-para">
+                    {{ i.description|safe }}
+                    </p>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="col-lg-6 col-sm-6">
+                {% for i in min_design %}
+                <div class="education-experience-card tmponhover tmp-scroll-trigger tmp-fade-in animation-order-4">
+                    <h4 class="edu-sub-title">{{ i.title|safe }}</h4>
+                    <h2 class="edu-title">{{ i.min_title|safe }}</h2>
+                    <p class="edu-para">
+                    {{ i.description|safe }}
+                    </p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="experiences-wrapper">
             <div class="row">
                 <div class="col-lg-6">
-                    {% for i in service_one %}
-                    <div class="service-card-v2 tmponhover tmp-scroll-trigger tmp-fade-in animation-order-1">
-                        <h2 class="service-card-num">{{ i.title|safe }}</h2>
-                        <p class="service-para">{{ i.description|safe }}</p>
+                    <div class="experiences-wrap-left-content">
+                        {% for i in custom %}
+                        <h2 class="custom-title mb-32 tmp-scroll-trigger tmp-fade-in animation-order-1">
+                            {{ i.title|safe }}
+                            <span><img src="{{ i.image.url }}" alt="custom-line" /></span>
+                        </h2>
+                        {% endfor %}
+                        {% for i in main_content %}
+                        <div class="experience-content tmp-scroll-trigger tmp-fade-in animation-order-1">
+                            <p class="ex-subtitle">{{ i.tagline|safe }}</p>
+                            <h2 class="ex-name">{{ i.title|safe }}</h2>
+                            <h3 class="ex-title">{{ i.min_title|safe }}</h3>
+                            <p class="ex-para">
+                            {{ i.description|safe }}
+                            </p>
+                        </div>
+                        {% endfor %}
+                        {% for i in min_content %}
+                        <div class="experience-content tmp-scroll-trigger tmp-fade-in animation-order-2">
+                            <p class="ex-subtitle">{{ i.tagline|safe }}</p>
+                            <h2 class="ex-name">{{ i.title|safe }}</h2>
+                            <h3 class="ex-title">{{ i.min_title|safe }}</h3>
+                            <p class="ex-para">
+                            {{ i.description|safe }}
+                            </p>
+                        </div>
+                        {% endfor %}
                     </div>
-                    {% endfor %}
-                    {% for i in service_two %}
-                    <div class="service-card-v2 tmponhover tmp-scroll-trigger tmp-fade-in animation-order-2">
-                        <h2 class="service-card-num">{{ i.title|safe }}</h2>
-                        <p class="service-para">{{ i.description|safe }}</p>
-                    </div>
-                    {% endfor %}
-                    {% for i in service_three %}
-                    <div class="service-card-v2 tmponhover tmp-scroll-trigger tmp-fade-in animation-order-3">
-                        <h2 class="service-card-num">{{ i.title|safe }}</h2>
-                        <p class="service-para">{{ i.description|safe }}</p>
-                    </div>
-                    {% endfor %}
                 </div>
                 <div class="col-lg-6">
-                    {% for i in service_end %}
-                    <div class="service-card-user-image">
-                        <img class="tmp-scroll-trigger tmp-zoom-in animation-order-1" src="{{ i.image.url }}" alt="latest-user-image">
+                    {% for i in experiences_image %}
+                    <div class="experiences-wrap-right-content">
+                        <img class="tmp-scroll-trigger tmp-zoom-in animation-order-1"
+                            src="{{ i.image.url }}" alt="expert-img" />
                     </div>
                     {% endfor %}
                 </div>
             </div>
         </div>
-    </section>
-    <!-- Tpm Latest Service Area End -->
+    </div>
+</section>
+<!-- Tpm Education Experience Area End -->
 {% endblock %}

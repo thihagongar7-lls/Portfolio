@@ -265,3 +265,111 @@ class ExperiencesImage(models.Model):
     image = models.ImageField(upload_to='experiences_image/')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)     
+
+class HomePrice(models.Model):
+    id = models.UUIDField(primary_key=True,default=uuid.uuid4,editable=False)
+    tagline = RichTextField()
+    title = RichTextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)     
+
+class Starter(models.Model):
+    id = models.UUIDField(primary_key=True,default=uuid.uuid4,editable=False)
+    title = RichTextField()
+    price = RichTextField()
+    month = RichTextField()
+    text = RichTextField()
+    sec_text = RichTextField()
+    third_text = RichTextField()
+    thm_btn= models.URLField(null=True,blank=True)
+    thm_text = RichTextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True) 
+
+class Basic(models.Model):
+    id = models.UUIDField(primary_key=True,default=uuid.uuid4,editable=False)
+    title = RichTextField()
+    price = RichTextField()
+    month = RichTextField()
+    text = RichTextField()
+    sec_text = RichTextField()
+    third_text = RichTextField()
+    fourth_text = RichTextField()
+    five_text = RichTextField()    
+    thm_btn= models.URLField(null=True,blank=True)
+    thm_text = RichTextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+class Premium(models.Model):
+    id = models.UUIDField(primary_key=True,default=uuid.uuid4,editable=False)
+    title = RichTextField()
+    price = RichTextField()
+    month = RichTextField()
+    text = RichTextField()
+    sec_text = RichTextField()
+    third_text = RichTextField()
+    thm_btn= models.URLField(null=True,blank=True)
+    thm_text = RichTextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+class MainBlog(models.Model):
+    id = models.UUIDField(primary_key=True,default=uuid.uuid4,editable=False)
+    tagline = RichTextField()
+    title = RichTextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)   
+
+class News(models.Model):
+    id = models.UUIDField(primary_key=True,default=uuid.uuid4,editable=False)
+    image = models.ImageField(upload_to='news/')
+    user = RichTextField()
+    time = RichTextField()
+    title = RichTextField()
+    thm_btn= models.URLField(null=True,blank=True)
+    thm_text = RichTextField()    
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)  
+
+
+class SecondNews(models.Model):
+    id = models.UUIDField(primary_key=True,default=uuid.uuid4,editable=False)
+    image = models.ImageField(upload_to='sec_news/')
+    user = RichTextField()
+    time = RichTextField()
+    title = RichTextField()
+    thm_btn= models.URLField(null=True,blank=True)
+    thm_text = RichTextField()    
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)  
+
+class ThirdNews(models.Model):
+    id = models.UUIDField(primary_key=True,default=uuid.uuid4,editable=False)
+    image = models.ImageField(upload_to='third_news/')
+    user = RichTextField()
+    time = RichTextField()
+    title = RichTextField()
+    thm_btn= models.URLField(null=True,blank=True)
+    thm_text = RichTextField()    
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)  
+
+class Touch(models.Model):
+    id = models.UUIDField(primary_key=True,default=uuid.uuid4,editable=False)
+    title = RichTextField()
+    link = RichTextField()
+    email = RichTextField()
+    location = RichTextField()
+    text = RichTextField()
+    contact = RichTextField()
+    phone = RichTextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+class Contact(models.Model):
+    id = models.UUIDField(primary_key=True,default=uuid.uuid4,editable=False)
+    title = RichTextField()
+    submit = RichTextField() 
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)

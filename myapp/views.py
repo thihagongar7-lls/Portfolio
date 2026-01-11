@@ -43,6 +43,17 @@ def Homepage(request):
     main_content =MainContent.objects.all()
     min_content =MinContent.objects.all()
     experiences_image = ExperiencesImage.objects.all()
+    
+    home_price = HomePrice.objects.all()
+    starter = Starter.objects.all()
+    basic = Basic.objects.all()
+    premium = Premium.objects.all()
+    main_blog =MainBlog.objects.all()
+    news = News.objects.all()
+    second_news = SecondNews.objects.all()
+    third_news = ThirdNews.objects.all()
+    touch = Touch.objects.all()
+    contact = Contact.objects.all()
     contex = {
         'banner':banner,
         'text':text,
@@ -77,6 +88,16 @@ def Homepage(request):
         'custom':custom,
         'main_content':main_content,
         'min_content':min_content,
-        'experiences_image':experiences_image
+        'experiences_image':experiences_image,
+        'home_price':home_price,
+        'starter':starter,
+        'basic':basic,
+        'premium':premium,
+        'main_blog':main_blog,
+        'news':news,
+        'second_news':second_news,
+        'third_news':third_news,
+        'touch':touch,
+        'contact':contact
     }
     return render(request, 'index.html', contex)

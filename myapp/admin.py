@@ -41,3 +41,16 @@ admin.site.register(Custom)
 admin.site.register(MainContent)
 admin.site.register(MinContent)
 admin.site.register(ExperiencesImage)
+
+admin.site.register(HomePrice)
+admin.site.register(Starter)
+admin.site.register(Basic)
+admin.site.register(Premium)
+
+admin.site.register(MainBlog)
+admin.site.register(News)
+admin.site.register(SecondNews)
+admin.site.register(ThirdNews)
+
+admin.site.register(Touch)
+admin.site.register(Contact)
